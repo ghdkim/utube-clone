@@ -1,0 +1,12 @@
+extends base
+
+block content 
+    h2 Update Video
+    form(method="POST")
+        h4 Change the Title of the Video:
+        input(type="text", name="title", placeholder="Enter new title", value=video.title, required, maxlength=80)
+        h4 Change the Description of the Video:
+        input(type="text", name="description", placeholder="Enter new description", value=video.description, required, minlength=20)
+        h4 Change the Hashtags of the Video (with comma separated values):
+        input(type="text", name="hashtags", placeholder="Enter new hashtags", value=video.hashtags.join(), required)
+        input(value="Save", type="submit")

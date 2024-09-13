@@ -1,0 +1,120 @@
+.video__data {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  .video__title {
+    font-size: 26px;
+    margin-bottom: 5px;
+  }
+  .video__createdAt {
+    font-size: 12px;
+  }
+  .video__owner {
+    margin-bottom: 5px;
+    font-size: 14px;
+    a {
+      color: cornflowerblue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.video__comments {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  .video__comment {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: #f9f9f9; // Light gray background similar to YouTube
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #e6e6e6;
+
+    // Comment Avatar
+    .comment__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 15px;
+      background-color: #ddd; // Placeholder for user avatar
+    }
+
+    // Comment Content (Username, Text, etc.)
+    .comment__content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      // Username
+      .comment__username {
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      // Comment Text
+      .comment__text {
+        font-size: 14px;
+        line-height: 1.4;
+        color: #333;
+      }
+
+      // Timestamp (like "2 hours ago")
+      .comment__timestamp {
+        font-size: 12px;
+        color: #666;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.video__comment-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #f1f1f1; // Light background for the comment form area
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+
+  textarea {
+    width: 98%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical; // Allow vertical resizing only
+    margin-bottom: 10px;
+    background-color: #fff;
+
+    &:focus {
+      outline: none;
+      border-color: cornflowerblue; // Highlight border when focused
+      box-shadow: 0 0 3px rgba(0, 123, 255, 0.25); // Soft glow effect on focus
+    }
+  }
+
+  button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background-color: cornflowerblue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #004aad; // Darker blue on hover
+    }
+  }
+}
