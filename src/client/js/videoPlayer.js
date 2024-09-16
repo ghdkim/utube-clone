@@ -81,10 +81,10 @@ const handleTimeUpdate = () => {
   timeline.value = Math.floor(video.currentTime);
 };
 
-const handleTimelineChange = (e) => {
+const handleTimelineChange = (event) => {
   const {
     target: { value },
-  } = e;
+  } = event;
   video.currentTime = value;
 };
 
@@ -118,13 +118,6 @@ const handleMouseLeave = (e) => {
   controlsTimeout = setTimeout(hideControls, 2000);
 };
 
-// const handleKeydown = (e) => {
-//   if (e.code === "Space") {
-//     handlePlayClick();
-//     e.preventDefault();
-//   }
-// };
-
 const handleVideoClickPlay = (e) => {
   handlePlayClick();
 };
@@ -132,13 +125,6 @@ const handleVideoClickPlay = (e) => {
 const handleMuteKeyUp = (e) => {
   if (e.key === "m") {
     handleMuteClick();
-    e.preventDefault();
-  }
-};
-
-const handleFullscreenKeyUp = (e) => {
-  if (e.key === "f") {
-    handleFullScreen();
     e.preventDefault();
   }
 };
@@ -158,7 +144,5 @@ videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
 timeline.addEventListener("input", handleTimelineChange);
 fullScreenBtn.addEventListener("click", handleFullScreen);
-// document.addEventListener("keydown", handleKeydown);
 video.addEventListener("click", handleVideoClickPlay);
 document.addEventListener("keyup", handleMuteKeyUp);
-document.addEventListener("keyup", handleFullscreenKeyUp);

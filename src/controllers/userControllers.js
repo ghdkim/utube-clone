@@ -174,8 +174,9 @@ export const postEdit = async (req, res) => {
     },
     { new: true }
   );
+  req.flash("success", "Video updated successfully");
   req.session.user = updatedUser;
-  return res.redirect("/users/edit");
+  return res.redirect("/");
 };
 
 export const getChangePassword = (req, res) => {
@@ -226,7 +227,7 @@ export const see = async (req, res) => {
     return res.status(404).render("404", { pageTitle: "User Not Found" });
   }
 
-  return res.render("users/profile", {
+  return res.render("profile", {
     pageTitle: user.name,
     user,
   });
